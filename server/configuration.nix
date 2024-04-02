@@ -120,7 +120,9 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  users.mutableUsers = false;
   users.users.totto2727 = {
+    hashedPassword = "$6$Fv4iD1gjAeYSmwRi$albtFuthGyIu6Ze8wMtVVbnJo0t7oMFXUNho.LEXMp8HloxcRZE8syNNSkx2mBl1JXlHv0blNsQ8fC73J6kJE.";
     isNormalUser = true;
     description = "totto2727";
     extraGroups = [ "networkmanager" "wheel" ];
