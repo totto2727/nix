@@ -1,5 +1,13 @@
 # nix
 
+## install
+
+- desktop: gnome
+- timezome: Asia/Tokyo
+- keyboard layout: US
+- language: English(US)
+- user: any
+
 ## initialize
 
 ```bash
