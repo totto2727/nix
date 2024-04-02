@@ -12,6 +12,8 @@
 
 ```bash
 curl https://raw.githubusercontent.com/totto2727/nix/main/server/configuration.nix | sudo tee /etc/nixos/configuration.nix
+curl https://raw.githubusercontent.com/totto2727/nix/main/server/flake.nix | sudo tee /etc/nixos/flake.nix
 
+sudo nixos-rebuild switch
 sudo nixos-rebuild switch
 ```
