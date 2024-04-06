@@ -29,7 +29,7 @@
     in {
       homeConfigurations."totto2727" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+        modules = [ ./totto2727.nix ];
       };
       
       devShells = forAllSystems ({ pkgs }: {

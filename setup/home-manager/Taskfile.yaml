@@ -26,6 +26,6 @@ tasks:
       - chsh -s $(which zsh)
       - echo "require reboot"
 
-  update:
-      - home-manager switch -f home.nix
+  totto2727:
+      - home-manager switch -f totto2727.nix
 
