@@ -6,6 +6,13 @@
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+    };
+  };
+
   home.packages = [
     pkgs.go-task
   ];
@@ -32,6 +39,14 @@
   programs.zsh.enable = true;
   programs.starship.enable = true;
   programs.zoxide.enable = true;
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      dracula-theme.theme-dracula
+      vscodevim.vim
+      yzhang.markdown-all-in-one
+    ];
+  };
 
   home.shellAliases = {
     VI = "nvim";
