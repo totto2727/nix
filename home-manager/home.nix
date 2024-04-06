@@ -6,7 +6,9 @@
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-  home.packages = [ ];
+  home.packages = [
+    pkgs.go-task
+  ];
 
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
