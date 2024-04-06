@@ -1,5 +1,0 @@
-#!/bin/bash
-
-CHANNELS="23.11"
-NIXPKGS_LINUX="nixos-$CHANNELS"
-HOME_MANAGER="release-$CHANNELS"

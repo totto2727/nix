@@ -1,0 +1,31 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  CHANNELS: "23.11"
+  NIXPKGS_LINUX: "nixos-{{.CHANNELS}}"
+  HOME_MANAGER: "release-{{.CHANNELS}}"
+
+tasks:
+  version:
+    silent: true
+    cmds:
+      - 'echo channels: {{.CHANNELS}}'
+      - 'echo nixpkgs: {{.NIXPKGS_LINUX}}'
+      - 'echo home-manager: {{.HOME_MANAGER}}'
+
+  install:
+    cmds:
+      - nix-channel --add "https://nixos.org/channels/{{.NIXPKGS_LINUX}}" nixpkgs
+      - nix-channel --update
+      - nix run "home-manager/{{.HOME_MANAGER}}" -- init . --switch
+
+  setup-shell:
+      - echo $(which zsh) | sudo tee -a /etc/shells
+      - chsh -s $(which zsh)
+      - echo "require reboot"
+
+  update:
+      - home-manager switch -f home.nix
+
