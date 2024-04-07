@@ -91,4 +91,15 @@
       };
     };
   };
+
+  age.secrets.github-token.file = ./secret/github-token.age;
+
+  services.github-runners = {
+    nix-sky-barium1 = {
+      enable = true;
+      name = "nix-sky-barium1";
+      url = "https://github.com/totto2727/nix";
+      tokenFile = config.age.secrets.github-token.path;
+    };
+  };
 }
