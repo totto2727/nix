@@ -1,0 +1,14 @@
+name: learn-github-actions
+
+on: 
+  - push
+
+jobs:
+  sky-barium1:
+    runs-on: 
+      labels: sky-barium1
+    steps:
+      - uses: actions/checkout@v4
+      - run: pwd
+      - run: ls -al
+      - run: id
